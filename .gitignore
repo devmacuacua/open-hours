@@ -1,7 +1,6 @@
-# dotenv environment variables file
 .env
 .env.test
 .env.production
-
-# Dependency directories
 node_modules/
+node_modules
+.DS_Store
