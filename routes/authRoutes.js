@@ -3,12 +3,10 @@ const route = express.Router();
 
 const {
     create,
-    read,
-    list
+    read
 } = require('../controllers/authController');
 
-route.post('/', create );
+route.post('/:userId', create );
 route.get('/:userId', read );
-route.get('/list', list );
 
 module.exports = route;
