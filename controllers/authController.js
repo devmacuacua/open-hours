@@ -1,14 +1,14 @@
 const OpenHour = require('../models/OpenHour');
 
 exports.create = async (req,res)=>{
-        const {day, startTime, endTime } = new OpenHour(req.body);       
-        try {    
+        const {day, startTime, endTime, user } = new OpenHour(req.body);      
 
+        try {    
             openHour = new OpenHour({
                 day, 
                 startTime, 
                 endTime, 
-                user: req.params.userId    
+                user: user    
             });
             const result = await openHour.save();  
             return res.json(result);
@@ -21,7 +21,7 @@ exports.create = async (req,res)=>{
 
 exports.read = async(req,res)=>{
     try {
-        const openHours =  await OpenHour.findOne({  user: req.params.userId    });
+        const openHours =  await OpenHour.find({  user: req.params.userId    });
         return res.json(openHours)
 
     } catch(err){

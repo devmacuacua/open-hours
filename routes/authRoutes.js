@@ -6,7 +6,7 @@ const {
     read
 } = require('../controllers/authController');
 
-route.post('/:userId', create );
+route.post('/', create );
 route.get('/:userId', read );
 
 module.exports = route;
